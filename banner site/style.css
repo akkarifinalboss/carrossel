@@ -1,0 +1,142 @@
+
+
+/* Estilo para o contêiner do carrossel */
+.div-slider {
+    width: auto; /* Largura automática */
+    height: 400px; /* Altura do carrossel */
+    text-align: center; /* Centraliza o conteúdo textualmente */
+}
+
+/* Estilo para o contêiner dos slides */
+.slides-front {
+    padding: 0; /* Remove o preenchimento */
+    width: 980px; /* Largura do carrossel */
+    height: 370px; /* Altura do carrossel */
+    display: block; /* Exibe o contêiner como bloco */
+    margin: auto; /* Centraliza o contêiner horizontalmente */
+    position: relative; /* Permite posicionamento absoluto dos filhos */
+}
+
+/* Desativa a seleção de texto para todos os elementos dentro de slides-front */
+.slides-front * {
+    user-select: none;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+}
+
+/* Esconde os inputs de controle dos slides */
+.slides-front input {
+    display: none;
+}
+
+/* Estilo para o contêiner dos slides */
+.slide-container {
+    display: block; /* Exibe o contêiner como bloco */
+}
+
+/* Estilo para cada slide */
+.slide {
+    top: 0; /* Posiciona o slide no topo do contêiner */
+    opacity: 0; /* Torna o slide invisível inicialmente */
+    width: 980px; /* Largura do slide */
+    height: 500px; /* Altura do slide */
+    display: block; /* Exibe o slide como bloco */
+    position: absolute; /* Posiciona o slide absolutamente dentro do contêiner */
+    transform: scale(0); /* Inicialmente escala o slide para 0 */
+}
+
+/* Estilo para a imagem dentro de cada slide */
+.slide img {
+    width: 100%; /* Largura da imagem é 100% do slide */
+    height: 100%; /* Altura da imagem é 100% do slide */
+    border-radius: 10px; /* Bordas arredondadas */
+}
+
+/* Estilo para os botões de navegação (setas) */
+.nav label {
+    width: 150px; /* Largura dos botões de navegação */
+    height: 100%; /* Altura dos botões de navegação */
+    display: none; /* Inicialmente escondido */
+    position: absolute; /* Posiciona o botão absolutamente */
+    opacity: 0; /* Torna o botão invisível */
+    z-index: 9; /* Define a ordem de empilhamento (acima dos slides) */
+    cursor: pointer; /* Muda o cursor para uma mão ao passar por cima */
+    transition: opacity .2s; /* Transição suave para a opacidade */
+    color: rgb(255, 255, 255); /* Cor do texto dos botões de navegação */
+    font-size: 156pt; /* Tamanho da fonte */
+    text-align: center; /* Centraliza o texto */
+    line-height: 480px; /* Altura da linha igual à altura dos botões de navegação */
+    font-family: "Varela Round", sans-serif; /* Fonte dos botões de navegação */
+    background-color: rgba(255, 255, 255, 0); /* Cor de fundo transparente */
+    text-shadow: 0px 0px 15px rgb(119, 119, 119); /* Sombra do texto */
+}
+
+/* Mostra os botões de navegação quando o slide é hover (passa o mouse sobre) */
+.slide:hover + .nav label {
+    opacity: 0.5; /* Torna o botão parcialmente visível */
+}
+
+/* Mostra o botão de navegação quando o mouse passa por cima */
+.nav label:hover {
+    opacity: 1; /* Torna o botão totalmente visível */
+}
+
+/* Posiciona o botão de navegação para avançar slides no lado direito */
+.nav .next {
+    right: 0; /* Alinha à direita */
+}
+
+/* Estilo aplicado aos slides quando o input de controle está checado */
+input:checked + .slide-container .slide {
+    opacity: 1; /* Torna o slide visível */
+    transform: scale(1); /* Restaura a escala do slide para 1 */
+}
+
+/* Mostra os botões de navegação quando o input de controle está checado */
+input:checked + .slide-container .nav label {
+    display: block; /* Torna os botões de navegação visíveis */
+}
+
+/* Estilo para os pontos de navegação (indicadores) */
+.nav-dots {
+    width: 100%; /* Largura total do contêiner de pontos */
+    bottom: 0px; /* Posiciona na parte inferior */
+    height: 11px; /* Altura dos pontos */
+    display: block; /* Exibe o contêiner como bloco */
+    position: relative; /* Posiciona relativamente */
+    text-align: center; /* Centraliza os pontos */
+}
+
+/* Estilo para cada ponto de navegação */
+.nav-dots .nav-dot {
+    top: 450px; /* Posiciona os pontos mais abaixo no carrossel */
+    width: 11px; /* Largura dos pontos */
+    height: 11px; /* Altura dos pontos */
+    margin: 0 4px; /* Espaçamento entre os pontos */
+    position: relative; /* Posiciona relativamente */
+    border-radius: 100%; /* Faz os pontos serem circulares */
+    display: inline-block; /* Exibe os pontos em linha */
+    background-color: rgba(0, 0, 0, 0.6); /* Cor de fundo dos pontos */
+}
+
+/* Muda a cor dos pontos quando o mouse passa por cima */
+.nav-dots .nav-dot:hover {
+    cursor: pointer; /* Muda o cursor para uma mão ao passar por cima */
+    background-color: rgba(0, 0, 0, 0.8); /* Torna o fundo mais escuro */
+}
+
+/* Muda a cor dos pontos quando o input correspondente está checado */
+input#img-1:checked ~ .nav-dots label#img-dot-1,
+input#img-2:checked ~ .nav-dots label#img-dot-2,
+input#img-3:checked ~ .nav-dots label#img-dot-3 {
+    background: rgba(0, 0, 0, 0.8); /* Torna o ponto correspondente mais escuro */
+}
+
+/* Efeito de zoom quando um elemento com a classe 'efeito' é hover */
+.efeito:hover {
+    cursor: pointer; /* Muda o cursor para uma mão ao passar por cima */
+    transform: scale(1.3, 1.3); /* Aumenta o tamanho do elemento em 1.3x */
+}

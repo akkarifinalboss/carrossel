@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrossel de Banners</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="div-slider">
+        <ul class="slides-front">
+          <input type="radio" name="radio-btn" id="img-1" checked="">
+          <li class="slide-container">
+             <div class="slide">
+               <img src="img/1.png">
+             </div>
+             <div class="nav">
+               <label for="img-3" class="prev">‹</label>
+               <label for="img-2" class="next">›</label>
+             </div>
+          </li>
+      
+          <input type="radio" name="radio-btn" id="img-2">
+          <li class="slide-container">
+              <div class="slide">
+                <img src="img/2.png">
+              </div>
+          <div class="nav">
+            <label for="img-1" class="prev">‹</label>
+            <label for="img-3" class="next">›</label>
+          </div>
+          </li>
+      
+          <input type="radio" name="radio-btn" id="img-3">
+          <li class="slide-container">
+              <div class="slide">
+                <img src="img/3.png">
+              </div>
+          <div class="nav">
+            <label for="img-2" class="prev">‹</label>
+            <label for="img-1" class="next">›</label>
+          </div>
+          </li>
+      
+          <li class="nav-dots">
+            <label for="img-1" class="nav-dot" id="img-dot-1"></label>
+            <label for="img-2" class="nav-dot" id="img-dot-2"></label>
+            <label for="img-3" class="nav-dot" id="img-dot-3"></label>
+          </li>
+        </ul>
+      </div>
+</body>
+</html>
